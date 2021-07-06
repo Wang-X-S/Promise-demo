@@ -1,4 +1,5 @@
-
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 //一 回调函数拿数据
 // function getTea(fn){
 //     setTimeout(()=>{
@@ -41,7 +42,7 @@ function getTea() {
 function getHotpot(){
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            resolve('getHotpot')
+            resolve('火锅')
         },1000)
     })
 }
@@ -55,6 +56,13 @@ function getHotpot(){
 // }).then(console.log)
 
 //三 通过async 函数 因为.then看起来也相当赘余
+// async function eat(){
+//     let hotpot=await getHotpot()
+//     console.log(hotpot)
+//     let tea = await getTea()
+//     console.log(tea)
+// }
+// eat()
 async function getData(){
     let hotpot = await getHotpot()
     console.log(hotpot)
@@ -63,3 +71,4 @@ async function getData(){
     let tea = await getTea()
     console.log(tea)
 }
+getData()
